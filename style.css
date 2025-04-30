@@ -1,169 +1,113 @@
+/* Reset dan box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography dasar */
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #F8F4E1;
-    text-align: center;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-header {
-    background-image: url(assets/bg1.JPG);
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 0;
-    height: 585px;
-    color: white;  
-    transition: 1.5s linear;
-    -moz-transition: 1.5s linear;  
-}
-
+/* Header dan tombol */
 .head {
-    background-color: rgba(255, 100, 43, 0.5);
-    color: black;
-    height: 585px;
+    padding: 2rem;
+    background-color: #f4f4f4;
     text-align: center;
-    justify-content: center;
-}
-
-.head-2 {
-    padding-left: 28%;
-    padding-bottom: 20px;
-}
-
-.judul {
-    padding-top: 20%;
-    font-size: 70px;
-    font-weight: bolder;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding-bottom: 20px;
-    width: 600px;
-}
-
-.judul-isi {
-    justify-content: center;
-    text-align: center;
-    color: white;
-    width: 600px;
 }
 
 .start {
-    background-color: transparent;
-    color: #ffffff;
-    border-radius: 10px; 
-    width: 10%;
-    height: 6%;
-    cursor: pointer;
-    border: 2px solid white;
-    font-size: medium;
-    font-weight: bold;
-    justify-content: center;
-    text-align: center;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
 }
 
-.start:hover {
-    background-color: white;
-    transition: 0.5s;
-    color: rgba(104, 28, 0, 0.4);
-}
 .start1 {
+    text-decoration: none;
     color: white;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
-.start1:hover {
-    background-color: white;
-    transition: 0.5s;
-    color: rgba(104, 28, 0, 0.4);
+.navbar {
+    background-color: #222;
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-nav {
-    background-color: white;
+.navbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar{
-	background: #ffffff;
-	margin: 0;
-	padding: 20px 30px;
-    color: #273F4F;
-}
- 
-.home {
-    color: #273F4F;
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.logic {
-    font-size: 30px;
-    font-weight: bolder;
+.navbar .menu li {
+    color: white;
+    cursor: pointer;
 }
 
-.container{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-    height: 30px;
-}
- 
-.menu{
-	margin: 0;
-	display: flex;
-	list-style: none;
-	padding: 0;			
-}
- 
-.menu li{
-	padding-left: 0;
-	margin-right: 10px;
-}
-
-main {
-    background-color: white;
-    height: 586px;
-    justify-content: center;
-}
-
+/* Konten utama */
 .isi {
-    padding-top: 20px;
+    padding: 2rem;
 }
 
 .main {
     display: flex;
-    padding-left: 20px;
-    gap: 20px;
-    justify-content: center;
-    background-color: white;
-    align-items: flex-start;
     flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
 }
 
-.main-1 {
-    justify-content: left;
-    max-width: 500px;
-    flex: 1;
-}
-
-.tentang {
-    width: 500px;
-    margin-bottom: 50px;
+.main-1 img {
+    max-width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 .tentang-1 {
-    max-width: 500px;
-    padding-top: 0px;
-    text-align: left;
     flex: 1;
-    line-height: 1.6;
+    min-width: 250px;
 }
 
-.satu {
-    font-size: 50px;
-    color: #273F4F;
-}
-
-.foot {
+/* Footer */
+footer {
     background-color: #222;
     color: white;
     text-align: center;
-    padding: 16px ;
-    font-size: 14px;
+    padding: 1rem;
+}
+
+/* 📱 MEDIA QUERIES */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .tentang-1, .main-1 {
+        width: 100%;
+    }
 }
